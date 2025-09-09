@@ -9,7 +9,7 @@ export class LoginPage {
   }
 
   async enterTheUsername(username: string) {
-    await this.page.fill(LoginLoc.email_input_loc, username);
+    await this.page.locator(LoginLoc.email_input_loc).fill(username);
     await this.page.waitForTimeout(5000);
   }
 
