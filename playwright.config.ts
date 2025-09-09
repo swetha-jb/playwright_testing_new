@@ -1,9 +1,12 @@
-import { defineConfig } from '@playwright/test';
+import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
-  reporter: [
-    ['list'],
-    ['html', { outputFolder: 'playwright-report/html' }],
-    ['junit', { outputFile: 'playwright-report/results.xml' }],
-  ],
+  testDir: "./tests",
+  use: {
+    browserName: "chromium",
+    headless: true,
+    screenshot: "only-on-failure",
+    video: "retain-on-failure",
+  },
+  reporter: [["list"], ["html", { outputFolder: "reports" }]],
 });
