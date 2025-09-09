@@ -10,10 +10,12 @@ export class LoginPage {
 
   async enterTheUsername(username: string) {
     await this.page.fill(LoginLoc.email_input_loc, username);
+    await this.page.waitForTimeout(5000);
   }
 
   async enterThePassword(password: string) {
     await this.page.fill(LoginLoc.password_input_loc, password);
+    await this.page.waitForTimeout(5000);
   }
 
   async clickOnSignInButton() {
